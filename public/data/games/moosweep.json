@@ -2,6 +2,9 @@
   "data": {
     "slug": "moosweep",
     "name": "Moosweep",
+    "category": "arcade",
+    "priceCents": 0,
+    "status": "available",
     "heroImage": {
       "alt": "A tiny cow exploring a fenced grassy field in a minesweeper-like game, with hidden mines scattered among the grass",
       "width": 1920,
@@ -14,35 +17,10 @@
       ],
       "fallback": "/assets/images/games/moosweep-hero.jpg"
     },
-    "rating": 4.9,
-    "likesCount": 1520,
-    "isLikedByCurrentUser": false,
     "fullDescription": "Moosweep — a minesweeper-like game about a gourmet cow looking for freedom. The field is 9x9, split into nine 3x3 squares with one mine hidden in each, in new places every run. Walk in four directions, eat the grass and trust your nose: it shows how many mines are around you. Step on one and it's over.",
     "specs": {
-      "genre": "Arcade",
       "players": "Solo",
-      "duration": "5-10 min",
-      "price": "Free"
-    },
-    "topRecords": [
-      {
-        "position": 1,
-        "playerName": "HappyCow",
-        "score": 8100,
-        "achievedAt": "2026-11-13T15:00:00Z"
-      },
-      {
-        "position": 2,
-        "playerName": "GrassEater",
-        "score": 7650,
-        "achievedAt": "2026-11-10T19:30:00Z"
-      },
-      {
-        "position": 3,
-        "playerName": "SniffMaster",
-        "score": 7200,
-        "achievedAt": "2026-11-06T12:15:00Z"
-      }
-    ]
+      "duration": "5-10 min"
+    }
   }
 }

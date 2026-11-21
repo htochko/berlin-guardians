@@ -2,6 +2,9 @@
   "data": {
     "slug": "pumpkin-patch-days",
     "name": "Pumpkin Patch Days",
+    "category": "farm",
+    "priceCents": 0,
+    "status": "available",
     "heroImage": {
       "alt": "A cozy autumn farming game with a character tending a pumpkin field, growing crops, watering plants, collecting harvests and preparing pumpkin pies for the village fair",
       "width": 1920,
@@ -14,35 +17,10 @@
       ],
       "fallback": "/assets/images/games/pumpkin-patch-days-hero.jpg"
     },
-    "rating": 4.7,
-    "likesCount": 28400,
-    "isLikedByCurrentUser": false,
     "fullDescription": "Pumpkin Patch Days — a quiet farm game set in one small autumn field. Plant seeds, keep the crows away, water in the morning and bake what you grow. Every week the village fair wants something new, so you slowly learn which pumpkins go best in which recipe. No rush, no timers.",
     "specs": {
-      "genre": "Farm",
       "players": "Solo",
-      "duration": "30-60 min",
-      "price": "Free"
-    },
-    "topRecords": [
-      {
-        "position": 1,
-        "playerName": "CozyPlayer",
-        "score": 30000,
-        "achievedAt": "2026-11-12T10:20:00Z"
-      },
-      {
-        "position": 2,
-        "playerName": "MossyStone",
-        "score": 27650,
-        "achievedAt": "2026-11-09T17:45:00Z"
-      },
-      {
-        "position": 3,
-        "playerName": "QuietRiver",
-        "score": 25300,
-        "achievedAt": "2026-11-03T08:30:00Z"
-      }
-    ]
+      "duration": "30-60 min"
+    }
   }
 }

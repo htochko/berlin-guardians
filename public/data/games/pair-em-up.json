@@ -2,6 +2,9 @@
   "data": {
     "slug": "pair-em-up",
     "name": "Pair 'em Up",
+    "category": "strategy",
+    "priceCents": 0,
+    "status": "available",
     "heroImage": {
       "alt": "A number-matching puzzle with a grid of numbers and a highlighted cell, featuring tools to clear pairs that match or add up to 10",
       "width": 1920,
@@ -14,35 +17,10 @@
       ],
       "fallback": "/assets/images/games/pair-em-up-hero.jpg"
     },
-    "rating": 4.8,
-    "likesCount": 890,
-    "isLikedByCurrentUser": false,
     "fullDescription": "Pair 'em Up — a number-matching puzzle. Clear the grid by removing pairs of identical numbers or numbers that add up to 10, and reach 100 points before you run out of moves. Three modes: Classic, Random and Chaotic. Helpers like Hints, Revert, Add Numbers, Shuffle and Eraser are limited, so use them wisely.",
     "specs": {
-      "genre": "Strategy",
       "players": "Solo",
-      "duration": "10-25 min",
-      "price": "Free"
-    },
-    "topRecords": [
-      {
-        "position": 1,
-        "playerName": "TenMaker",
-        "score": 140,
-        "achievedAt": "2026-11-14T12:40:00Z"
-      },
-      {
-        "position": 2,
-        "playerName": "NumberNinja",
-        "score": 128,
-        "achievedAt": "2026-11-11T18:00:00Z"
-      },
-      {
-        "position": 3,
-        "playerName": "DoubleFive",
-        "score": 117,
-        "achievedAt": "2026-11-08T08:35:00Z"
-      }
-    ]
+      "duration": "10-25 min"
+    }
   }
 }

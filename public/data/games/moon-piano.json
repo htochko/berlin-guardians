@@ -2,6 +2,9 @@
   "data": {
     "slug": "moon-piano",
     "name": "Moon Piano",
+    "category": "music",
+    "priceCents": 0,
+    "status": "available",
     "heroImage": {
       "alt": "A glowing piano keyboard beside a moonlit lake, with a large moon, floating musical notes and a menu for recording melodies",
       "width": 1920,
@@ -14,35 +17,10 @@
       ],
       "fallback": "/assets/images/games/moon-piano-hero.jpg"
     },
-    "rating": 4.7,
-    "likesCount": 23400,
-    "isLikedByCurrentUser": false,
     "fullDescription": "Moon Piano — a small musical toy that sits somewhere between a game and an instrument. Play melodies on a glowing keyboard and watch the moon change shape with every note. Record short tunes and replay them any time. Great for late evenings.",
     "specs": {
-      "genre": "Music",
       "players": "Solo",
-      "duration": "5-30 min",
-      "price": "Free"
-    },
-    "topRecords": [
-      {
-        "position": 1,
-        "playerName": "CozyPlayer",
-        "score": 37440,
-        "achievedAt": "2026-11-12T10:20:00Z"
-      },
-      {
-        "position": 2,
-        "playerName": "MossyStone",
-        "score": 35090,
-        "achievedAt": "2026-11-09T17:45:00Z"
-      },
-      {
-        "position": 3,
-        "playerName": "QuietRiver",
-        "score": 32740,
-        "achievedAt": "2026-11-03T08:30:00Z"
-      }
-    ]
+      "duration": "5-30 min"
+    }
   }
 }

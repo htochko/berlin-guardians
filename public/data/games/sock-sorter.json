@@ -2,6 +2,9 @@
   "data": {
     "slug": "sock-sorter",
     "name": "Sock Sorter",
+    "category": "puzzle",
+    "priceCents": 0,
+    "status": "available",
     "heroImage": {
       "alt": "A cute laundry puzzle with a cartoon cat buried in a pile of colorful socks, matching pairs, a washing machine and a countdown timer",
       "width": 1920,
@@ -14,35 +17,10 @@
       ],
       "fallback": "/assets/images/games/sock-sorter-hero.jpg"
     },
-    "rating": 4.6,
-    "likesCount": 20500,
-    "isLikedByCurrentUser": false,
     "fullDescription": "Sock Sorter — a puzzle game about the eternal mystery of missing socks. A huge pile of laundry lands on the screen and you pair them up by color, stripes and tiny details. Some socks have no match at all. Each level gets messier and the washing machine timer gets shorter.",
     "specs": {
-      "genre": "Puzzle",
       "players": "Solo",
-      "duration": "10-30 min",
-      "price": "Free"
-    },
-    "topRecords": [
-      {
-        "position": 1,
-        "playerName": "LittleFox",
-        "score": 31180,
-        "achievedAt": "2026-11-12T10:20:00Z"
-      },
-      {
-        "position": 2,
-        "playerName": "SoftPaws",
-        "score": 28830,
-        "achievedAt": "2026-11-09T17:45:00Z"
-      },
-      {
-        "position": 3,
-        "playerName": "SleepyBear",
-        "score": 26480,
-        "achievedAt": "2026-11-03T08:30:00Z"
-      }
-    ]
+      "duration": "10-30 min"
+    }
   }
 }

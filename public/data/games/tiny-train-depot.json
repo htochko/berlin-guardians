@@ -2,6 +2,9 @@
   "data": {
     "slug": "tiny-train-depot",
     "name": "Tiny Train Depot",
+    "category": "simulation",
+    "priceCents": 299,
+    "status": "available",
     "heroImage": {
       "alt": "A bustling miniature train station with multiple railway tracks, a steam locomotive, passenger platforms, station buildings, waiting travelers and a coffee cart",
       "width": 1920,
@@ -14,35 +17,10 @@
       ],
       "fallback": "/assets/images/games/tiny-train-depot-hero.jpg"
     },
-    "rating": 4.6,
-    "likesCount": 17500,
-    "isLikedByCurrentUser": false,
     "fullDescription": "Tiny Train Depot — a relaxed simulation about a depot with more trains than space. Lay the tracks, plan the schedule and juggle arrivals before a traffic jam happens. Passengers get impatient but forgive you if the coffee cart is nearby. Decorate the station as you grow.",
     "specs": {
-      "genre": "Simulation",
       "players": "Solo",
-      "duration": "40-90 min",
-      "price": "$2.99"
-    },
-    "topRecords": [
-      {
-        "position": 1,
-        "playerName": "PixelLeaf",
-        "score": 30590,
-        "achievedAt": "2026-11-12T10:20:00Z"
-      },
-      {
-        "position": 2,
-        "playerName": "CloudWalker",
-        "score": 28240,
-        "achievedAt": "2026-11-09T17:45:00Z"
-      },
-      {
-        "position": 3,
-        "playerName": "NightOwl",
-        "score": 25890,
-        "achievedAt": "2026-11-03T08:30:00Z"
-      }
-    ]
+      "duration": "40-90 min"
+    }
   }
 }
