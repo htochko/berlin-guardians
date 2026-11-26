@@ -1,0 +1,7 @@
+.catalog-page__title {
+  margin-block-end: var(--space-section-heading);
+}
+
+.catalog-page__status {
+  color: var(--on-bg-low);
+}

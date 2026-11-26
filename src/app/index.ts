@@ -55,7 +55,8 @@ function initApp(): void {
     {
       path: Route.Catalog,
       title: APP_CATALOG_TITLE,
-      render: (location: AppLocation): PageView => renderCatalogPage(APP_CATALOG_TITLE, location),
+      // render: (location: AppLocation): PageView => renderCatalogPage(APP_CATALOG_TITLE, location),
+      render: (location: AppLocation): PageView => renderCatalogPage(location),
     },
     { path: Route.Cart, title: APP_CART_TITLE, render: (): PageView => renderCartPage() },
     {
