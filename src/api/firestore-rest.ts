@@ -54,17 +54,16 @@ export function toNullableString(field?: FirestoreFieldValue): string | null {
 }
 
 export function extractSlugFromName(name: string): string {
-  const parts = name.split('/');
-  return parts.at(-1) ?? 'deafault';
+  return name.split('/').at(-1) ?? 'default';
 }
 
-export function extractSlugFromRef(field: FirestoreFieldValue): string {
+export function extractSlugFromRef(field?: FirestoreFieldValue): string {
   const ref = field?.referenceValue;
   if (!ref) {
-    return 'deafault';
+    return 'default';
   }
   const parts = ref.split('/');
-  return parts.at(-1) ?? 'deafault';
+  return parts.at(-1) ?? 'default';
 }
 
 export type FirestoreRestValue =
