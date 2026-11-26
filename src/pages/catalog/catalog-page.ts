@@ -1,4 +1,4 @@
-import { DialogParameter, Route, type AppLocation, type PageView } from '../../types/routes';
+import { Route, type AppLocation, type PageView } from '../../types/routes';
 import { createElement } from './../../utils/dom';
 import type { Product } from '../../types/product';
 // import {
@@ -12,33 +12,35 @@ import { createCardGrid, type CardGridItem } from '../../components/card-grid/ca
 import { toBrowserUrl } from '../../utils/url';
 import { paginate, parsePage } from '../../utils/pagination';
 import { createPagination } from '../../components/pagination/pagination';
-import { fetchAllProducts } from '../../api/products-api-local';
+import { fetchAllProducts } from '../../api/products-api';
 import './catalog-page.css';
 
 const PAGE_SIZE = 8;
 const EAGER_IMAGES = 4; // first items download immediately
 
-function toGridItem(product: Product, index: number): CardGridItem {
+function getPageQuery(page: number): URLSearchParams {
+  const query: URLSearchParams = new URLSearchParams();
+
+  if (page > 1) {
+    query.set('page', String(page));
+  }
+
+  return query;
+}
+
+function getPageHref(page: number): string {
+  return toBrowserUrl(Route.Catalog, getPageQuery(page), import.meta.env.BASE_URL);
+}
+
+function toGridItem(product: Product, index: number, pageQuery: URLSearchParams): CardGridItem {
   return {
     element: createProductCard(product, {
       route: Route.Catalog,
       headingLevel: 2,
       imageLoading: index < EAGER_IMAGES ? 'eager' : 'lazy',
+      pageQuery,
     }),
   };
-}
-
-function getPageHref(page: number): string {
-  const query: URLSearchParams = new URLSearchParams();
-  if (page > 1) {
-    query.set('page', String(page));
-  }
-
-  return toBrowserUrl(Route.Catalog, query, import.meta.env.BASE_URL);
-}
-
-function hasDialog(query: URLSearchParams): boolean {
-  return query.has(DialogParameter.Product) || query.has(DialogParameter.Auth);
 }
 
 export function renderCatalogPage(location: AppLocation): PageView {
@@ -85,9 +87,14 @@ export function renderCatalogPage(location: AppLocation): PageView {
 
     const result = paginate(products, currentPage, PAGE_SIZE);
     currentPage = result.page; //?page=999 - last page
+    const pageQuery: URLSearchParams = getPageQuery(result.page);
 
     results.replaceChildren(
-      createCardGrid(result.items.map(toGridItem)),
+      createCardGrid(
+        result.items.map((product: Product, index: number): CardGridItem =>
+          toGridItem(product, index, pageQuery),
+        ),
+      ),
       ...(result.totalPages > 1
         ? [
             createPagination({
@@ -125,10 +132,6 @@ export function renderCatalogPage(location: AppLocation): PageView {
       }),
     ],
     update: (next: AppLocation): void => {
-      if (hasDialog(next.query) && !next.query.has('page')) {
-        return;
-      }
-
       const nextPage: number = parsePage(next.query);
       if (nextPage === currentPage) {
         return;

@@ -19,6 +19,9 @@ export interface ProductCardOptions {
   readonly headingLevel: HeadingLevel;
   readonly layout?: CardLayout;
   readonly imageLoading?: 'lazy' | 'eager';
+
+  // (e.g. ?page=2): kept when the dialog closes
+  readonly pageQuery?: URLSearchParams;
 }
 
 const HEADING_TAGS: Readonly<Record<HeadingLevel, 'h2' | 'h3' | 'h4'>> = {
@@ -59,7 +62,7 @@ function createTitle(
         className: 'product-card__link',
         text: product.name,
         attributes: {
-          href: getProductHref(product.slug, options.route),
+          href: getProductHref(product.slug, options.route, options.pageQuery),
           'aria-describedby': getMetaId(product),
         },
       })

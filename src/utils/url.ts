@@ -33,8 +33,14 @@ export function getRouteHref(route: Route): string {
 }
 
 // A link that opens the product dialog on top of the given page
-export function getProductHref(slug: string, route: Route): string {
-  const query: URLSearchParams = new URLSearchParams({ [DialogParameter.Product]: slug });
+// `baseQuery` keeps the page state (e.g. ?page=2) when the dialog is closed
+export function getProductHref(
+  slug: string,
+  route: Route,
+  baseQuery: URLSearchParams = new URLSearchParams(),
+): string {
+  const query: URLSearchParams = new URLSearchParams(baseQuery);
+  query.set(DialogParameter.Product, slug);
 
   return toBrowserUrl(route, query, BASE_PATH);
 }
