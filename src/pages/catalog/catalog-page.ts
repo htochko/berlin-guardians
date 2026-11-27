@@ -22,7 +22,7 @@ function getPageQuery(page: number): URLSearchParams {
   const query: URLSearchParams = new URLSearchParams();
 
   if (page > 1) {
-    query.set('page', String(page));
+    query.set('page', String(page)); // e.g. page=2
   }
 
   return query;

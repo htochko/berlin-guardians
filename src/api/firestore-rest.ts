@@ -1,4 +1,4 @@
-import { firebaseConfig, FIREBASE_ENDPOINT } from '../services/firebase';
+import { firebaseConfig, FIREBASE_ENDPOINT, FIREBASE_ENDPOINT_QUERY } from '../services/firebase';
 
 export interface RunQueryDocument {
   name: string;
@@ -157,4 +157,24 @@ export interface RunQueryFilter {
     op: 'AND';
     filters: NonNullable<RunQueryFilter['fieldFilter']>[];
   };
+}
+
+export async function restRunCollectionQuery(
+  collectionId: string,
+  limit = 100,
+): Promise<RunQueryDocument[]> {
+  const response = await fetch(FIREBASE_ENDPOINT_QUERY, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ structuredQuery: { from: [{ collectionId }], limit } }),
+  });
+
+  if (!response.ok) {
+    const details = await response.text();
+    throw new Error(`Firestore runQuery ${collectionId} failed (${response.status}): ${details}`);
+  }
+
+  const rows = (await response.json()) as Array<{ document?: RunQueryDocument }>;
+
+  return rows.flatMap((row) => (row.document === undefined ? [] : [row.document]));
 }
