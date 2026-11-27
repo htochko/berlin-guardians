@@ -1,4 +1,5 @@
 import { createElement } from '../../utils/dom';
+import './genre-filter.css';
 
 export interface GenreFilterItem {
   readonly label: string;
