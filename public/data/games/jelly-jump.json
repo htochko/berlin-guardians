@@ -1,0 +1,26 @@
+{
+  "data": {
+    "slug": "jelly-jump",
+    "name": "Jelly Jump",
+    "category": "arcade",
+    "priceCents": 199,
+    "status": "available",
+    "heroImage": {
+      "alt": "A pink jelly character jumps between colorful floating platforms in a candy-themed arcade game",
+      "width": 1920,
+      "height": 1080,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcset": "/assets/images/games/jelly-jump-hero.webp 1x, /assets/images/games/jelly-jump-hero@2x.webp 2x"
+        }
+      ],
+      "fallback": "/assets/images/games/jelly-jump-hero.jpg"
+    },
+    "fullDescription": "Jelly Jump — a small arcade game about a jelly that wants to reach the top. Jump from platform to platform, grab the candy and avoid the sour ones. The tower is different each run and gets faster as you climb. Beat your own high score.",
+    "specs": {
+      "players": "Solo",
+      "duration": "5-15 min"
+    }
+  }
+}

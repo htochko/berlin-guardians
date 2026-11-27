@@ -1,0 +1,26 @@
+{
+  "data": {
+    "slug": "the-last-lighthouse",
+    "name": "The Last Lighthouse",
+    "category": "adventure",
+    "priceCents": 499,
+    "status": "available",
+    "heroImage": {
+      "alt": "A lonely lighthouse and a small keeper's cottage on a stormy, fog-covered coast, with glowing windows, a lantern, a rocky path and a radio signal interface",
+      "width": 1920,
+      "height": 1080,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcset": "/assets/images/games/the-last-lighthouse-hero.webp 1x, /assets/images/games/the-last-lighthouse-hero@2x.webp 2x"
+        }
+      ],
+      "fallback": "/assets/images/games/the-last-lighthouse-hero.jpg"
+    },
+    "fullDescription": "The Last Lighthouse — a story adventure about the final keeper of a lonely lighthouse on a foggy coast. Repair the lamp, read the logbook and answer the radio messages that arrive at night. Every night something new washes ashore, and your choices decide who finds their way home.",
+    "specs": {
+      "players": "Solo",
+      "duration": "2-3 h"
+    }
+  }
+}

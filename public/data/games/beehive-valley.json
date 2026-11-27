@@ -1,0 +1,26 @@
+{
+  "data": {
+    "slug": "beehive-valley",
+    "name": "Beehive Valley",
+    "category": "farm",
+    "priceCents": 299,
+    "status": "available",
+    "heroImage": {
+      "alt": "Cozy beekeeping game showing a sunny valley with flower beds, honey hives and the player's resource and honey order panels",
+      "width": 1920,
+      "height": 1080,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcset": "/assets/images/games/beehive-valley-hero.webp 1x, /assets/images/games/beehive-valley-hero@2x.webp 2x"
+        }
+      ],
+      "fallback": "/assets/images/games/beehive-valley-hero.jpg"
+    },
+    "fullDescription": "Beehive Valley — a cozy farm game about beekeeping. You inherit a messy valley and a few tired hives. Plant flowers, move the hives around and keep the bees happy through every season. Different flowers make different honey, and the neighbors pay well for the rare ones.",
+    "specs": {
+      "players": "Solo",
+      "duration": "40-80 min"
+    }
+  }
+}

@@ -1,0 +1,94 @@
+.home-page__genres {
+  padding-inline: var(--space-page-gutter);
+}
+
+.profile-page__genres-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-grid);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 37.5em) {
+  .profile-page__genres-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 60em) {
+  .profile-page__genres-list {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.profile-page__genres-list__item {
+  min-width: 0;
+}
+
+.genre-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-card-gap);
+  min-height: var(--target-size);
+  padding: var(--space-card);
+  background-color: var(--surface);
+  color: var(--on-bg);
+  border: var(--border-width) solid var(--outline-variant);
+  border-radius: var(--corner-medium);
+  box-shadow: var(--level-1);
+  text-decoration: none;
+  font-family: var(--inter);
+  font-size: var(--label-medium);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-height-tight);
+  transition:
+    background-color var(--duration-fast) var(--easing-standard),
+    border-color var(--duration-fast) var(--easing-standard),
+    box-shadow var(--duration-fast) var(--easing-standard);
+}
+
+@media (min-width: 60em) {
+  .genre-tile {
+    min-height: var(--size-8);
+    padding: var(--size-3) var(--size-2);
+  }
+}
+
+.genre-tile:hover {
+  background-color: var(--surface-low);
+  border-color: var(--outline);
+  box-shadow: var(--level-2);
+}
+
+.genre-tile:active {
+  background-color: var(--secondary);
+  box-shadow: var(--level-1);
+}
+
+.genre-tile:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.genre-tile__icon {
+  display: block;
+  width: var(--size-3);
+  height: var(--size-3);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@media (min-width: 60em) {
+  .genre-tile__icon {
+    width: var(--size-4);
+    height: var(--size-4);
+  }
+}
+
+.genre-tile__label {
+  white-space: nowrap;
+}

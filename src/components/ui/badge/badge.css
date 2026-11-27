@@ -1,0 +1,75 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-1);
+  padding: var(--size-05) var(--size-2);
+  border-radius: var(--corner-full);
+  background: var(--primary);
+  color: var(--on-primary);
+  box-shadow: var(--level-1);
+  font-size: var(--label-large);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-height-normal);
+  white-space: nowrap;
+}
+
+.badge--price-free {
+  background: var(--price-free);
+}
+
+/* the background is the text color mixed into the surface: one token per category */
+.badge--category {
+  text-transform: capitalize;
+  background: color-mix(in srgb, var(--category-fg, var(--on-bg)) 22%, var(--surface));
+  color: var(--category-fg, var(--on-bg));
+  box-shadow: none;
+}
+
+.badge--category[data-category='puzzle'] {
+  --category-fg: var(--category-puzzle-fg);
+}
+
+.badge--category[data-category='arcade'] {
+  --category-fg: var(--category-arcade-fg);
+}
+
+.badge--category[data-category='strategy'] {
+  --category-fg: var(--category-strategy-fg);
+}
+
+.badge--category[data-category='farm'] {
+  --category-fg: var(--category-farm-fg);
+}
+
+.badge--category[data-category='adventure'] {
+  --category-fg: var(--category-adventure-fg);
+}
+
+.badge--category[data-category='simulation'] {
+  --category-fg: var(--category-simulation-fg);
+}
+
+.badge--category[data-category='music'] {
+  --category-fg: var(--category-music-fg);
+}
+
+.badge--category[data-category='casual'] {
+  --category-fg: var(--category-casual-fg);
+}
+
+.badge--status,
+.badge--meta {
+  background: var(--secondary);
+  color: var(--on-bg);
+  box-shadow: none;
+}
+
+.badge--status .icon {
+  color: var(--success);
+}
+
+@media (forced-colors: active) {
+  .badge {
+    border: var(--border-width) solid CanvasText;
+  }
+}

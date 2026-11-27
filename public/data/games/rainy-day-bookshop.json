@@ -1,0 +1,26 @@
+{
+  "data": {
+    "slug": "rainy-day-bookshop",
+    "name": "Rainy Day Bookshop",
+    "category": "simulation",
+    "priceCents": 399,
+    "status": "available",
+    "heroImage": {
+      "alt": "A warm secondhand bookshop on a rainy day, with a customer chatting to the shopkeeper, shelves of books, a sleeping cat, tea and cozy reading corners",
+      "width": 1920,
+      "height": 1080,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcset": "/assets/images/games/rainy-day-bookshop-hero.webp 1x, /assets/images/games/rainy-day-bookshop-hero@2x.webp 2x"
+        }
+      ],
+      "fallback": "/assets/images/games/rainy-day-bookshop-hero.jpg"
+    },
+    "fullDescription": "Rainy Day Bookshop — a quiet simulation about running a secondhand bookshop. Customers walk in wet and tired, and you find them the book they didn't know they needed. Sort the shelves, brew tea and slowly decorate the shop. The rain never really stops, and that's fine.",
+    "specs": {
+      "players": "Solo",
+      "duration": "40-80 min"
+    }
+  }
+}

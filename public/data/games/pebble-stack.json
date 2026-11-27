@@ -1,0 +1,26 @@
+{
+  "data": {
+    "slug": "pebble-stack",
+    "name": "Pebble Stack",
+    "category": "casual",
+    "priceCents": 0,
+    "status": "available",
+    "heroImage": {
+      "alt": "A stack of carefully balanced stones beside a peaceful river, with a frog, a height meter and tools to rotate and adjust the pebbles",
+      "width": 1920,
+      "height": 1080,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcset": "/assets/images/games/pebble-stack-hero.webp 1x, /assets/images/games/pebble-stack-hero@2x.webp 2x"
+        }
+      ],
+      "fallback": "/assets/images/games/pebble-stack-hero.jpg"
+    },
+    "fullDescription": "Pebble Stack — a physics game about balancing stones. Each level hands you a few pebbles of different shapes and a flat rock. Find the balance point and stack as high as you can. If it falls, you try again. It's calmer than it sounds.",
+    "specs": {
+      "players": "Solo",
+      "duration": "5-15 min"
+    }
+  }
+}

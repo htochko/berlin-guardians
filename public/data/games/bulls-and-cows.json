@@ -1,0 +1,26 @@
+{
+  "data": {
+    "slug": "bulls-and-cows",
+    "name": "Bulls and Cows: The Summoning",
+    "category": "puzzle",
+    "priceCents": 0,
+    "status": "available",
+    "heroImage": {
+      "alt": "A dark number-guessing puzzle presented as a summoning ritual, with a circular symbol puzzle and a guess input",
+      "width": 1920,
+      "height": 1080,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcset": "/assets/images/games/bulls-and-cows-hero.webp 1x, /assets/images/games/bulls-and-cows-hero@2x.webp 2x"
+        }
+      ],
+      "fallback": "/assets/images/games/bulls-and-cows-hero.jpg"
+    },
+    "fullDescription": "Bulls and Cows: The Summoning — the old number-guessing game turned into a dark ritual. You're a demon summoner and the demon's true name is a sequence of unique pictograms. Pick the length and the numeral system, enter your guess and read the hint: bulls are right symbols in the right place, cows are right symbols in the wrong one. No attempt limit, but fewer tries and less time put you higher in the records table.",
+    "specs": {
+      "players": "Solo",
+      "duration": "3-10 min"
+    }
+  }
+}

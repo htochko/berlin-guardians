@@ -1,0 +1,149 @@
+/*
+  Raw values live only here; components use var(--token).
+  "~" marks a color estimated from the mockup: check it in Figma.
+*/
+
+:root {
+  /* colors: page */
+  --bg: #1e2026;
+  --on-bg: #f2e4da;
+  --on-bg-low: #cac7d1;
+
+  /* colors: surfaces */
+  --surface: #2a2e36;
+  --surface-low: #32343c;
+  --secondary: #3c4049; /* hover of quiet controls, inactive chips */
+
+  /* colors: footer */
+  --bg-footer: #14161c;
+  --bg-footer-low: #1e2026;
+  --on-bg-footer: #c8c5cd;
+
+  /* colors: brand */
+  --primary: #fcc246;
+  --primary-low: #ffd569; /* ~ hover */
+  --primary-high: #e0a52c; /* ~ pressed */
+  --on-primary: #1e2026; /* text on primary and on price-free */
+
+  /* colors: status */
+  --like: #ff6574; /* ~ */
+  --error: #ffb3b3;
+  --price-free: #7fd0db; /* ~ only for "Free" */
+  --success: #6fd391; /* ~ check icons */
+  --category-puzzle-fg: #b8a9ff;
+  --category-arcade-fg: #ff9fd0;
+  --category-strategy-fg: #8cc2ff;
+  --category-farm-fg: #6fd391;
+  --category-adventure-fg: #ffb36b;
+  --category-simulation-fg: #7fd0db;
+  --category-music-fg: #ff8f9a;
+  --category-casual-fg: #e0d48a;
+
+  /* colors: borders and overlays */
+  --outline: #8a8d98; /* fields, chips */
+  --outline-variant: #353842; /* cards; decoration only */
+  --overlay: #0f1115e6;
+
+  /* size scale: 4px grid */
+  --size-05: 0.25rem; /* 4px */
+  --size-1: 0.5rem; /* 8px */
+  --size-2: 1rem; /* 16px */
+  --size-3: 1.5rem; /* 24px */
+  --size-4: 2rem; /* 32px */
+  --size-6: 3rem; /* 48px */
+  --size-8: 4rem; /* 64px */
+
+  /* shape */
+  --corner-small: 8px;
+  --corner-medium: 12px;
+  --corner-large: 16px;
+  --corner-extra-large: 24px;
+  --corner-full: 9999px;
+
+  --shadow-color: rgb(0 0 0 / 0.35);
+  --level-1: 0 1px 2px var(--shadow-color); /* resting */
+  --level-2: 0 4px 8px var(--shadow-color); /* hover */
+  --level-3: 0 8px 20px var(--shadow-color); /* modal, dropdown */
+
+  /* typography: rem, nothing below 14px */
+  --inter: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --display-large: 4rem; /* 64px, h1 */
+  --display-medium: 2.5rem; /* 40px, h1 on phones */
+
+  --headline-large: 2.25rem; /* 36px, h2 */
+  --headline-medium: 1.75rem; /* 28px, h3 */
+  --headline-small: 1.5rem; /* 24px, h4 */
+
+  --body-large: 1.25rem; /* 20px, card title */
+  --body-medium: 1.125rem; /* 18px, default text */
+  --body-small: 1rem; /* 16px, descriptions */
+
+  --label-extra-large: 1.125rem; /* 18px, large button */
+  --label-large: 1rem; /* 16px, medium button, genre line */
+  --label-medium: 0.875rem; /* 14px, small button; the minimum */
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* buttons: padding "vertical horizontal" */
+  --btn-large: var(--size-2) var(--size-4);
+  --btn-medium: var(--size-1) var(--size-3);
+  --btn-small: var(--size-1) var(--size-2);
+  --btn-icon: var(--size-1);
+
+  /* layout: each token replaces a hardcoded value */
+  --line-height-tight: 1.2; /* headings, labels, buttons */
+  --line-height-normal: 1.5; /* running text */
+  --border-width: 1px;
+  --focus-ring: var(--primary);
+  --focus-ring-width: 3px;
+  --focus-ring-offset: var(--size-05);
+  --opacity-disabled: 0.6; /* muted image, disabled control */
+  --target-size: 2.75rem; /* 44px, minimum tap target */
+  --container-max: 80rem; /* 1280px */
+  --card-media-ratio: 402 / 220; /* card image, one value for every card */
+  --card-media-share: 40%; /* image width in a horizontal card */
+  --dialog-width: 48rem; /* 768px, default dialog (auth) */
+  --dialog-width-product: 29rem; /* 464px: close to the card image width, so it is not upscaled */
+
+  /* spacing roles: the only spacing tokens components use for layout */
+  --space-page-gutter: var(--size-2);
+  --space-section: var(--size-6);
+  --space-section-heading: var(--size-3);
+  --space-grid: var(--size-3);
+  --space-card: var(--size-3);
+  --space-card-gap: var(--size-1);
+
+  /* motion */
+  --duration-fast: 150ms;
+  --duration-medium: 250ms;
+  --easing-standard: ease;
+  --easing-decelerate: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/*
+  Breakpoints cannot be variables in @media. Use exactly these two, in em:
+  tablet 37.5em (600px), desktop 60em (960px).
+*/
+@media (min-width: 37.5em) {
+  :root {
+    --space-page-gutter: var(--size-3);
+    --space-section: var(--size-8);
+  }
+}
+
+@media (min-width: 60em) {
+  :root {
+    --space-page-gutter: var(--size-4);
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --on-bg-low: #e6e3ec;
+    --outline: #b4b7c2;
+    --outline-variant: #8a8d98;
+  }
+}

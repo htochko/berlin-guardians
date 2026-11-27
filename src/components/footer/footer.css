@@ -1,0 +1,86 @@
+/* components/footer/footer.css */
+.footer {
+  margin-top: var(--space-section);
+  border-top: var(--border-width) solid var(--outline-variant);
+  background: var(--bg-footer);
+  color: var(--on-bg-footer);
+  font-size: var(--label-medium);
+}
+
+.footer .brand {
+  font-size: var(--body-large);
+}
+
+.footer__main {
+  display: grid;
+  gap: var(--size-3);
+  padding-block: var(--size-4);
+}
+
+.footer__identity {
+  --brand-logo-size: var(--size-6); /* 48px */
+  --brand-gap: calc(var(--size-1) + var(--size-05));
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-05);
+}
+
+/* aligns the tagline with the brand text */
+.footer__tagline {
+  margin-inline-start: calc(var(--brand-logo-size) + var(--brand-gap));
+}
+
+.footer__nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--size-3);
+}
+
+.footer__nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target-size);
+}
+
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-05);
+  padding-block: var(--size-2);
+  border-top: var(--border-width) solid var(--outline-variant);
+}
+
+.footer__heart {
+  color: var(--like);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .footer__nav-link {
+    transition: color var(--duration-fast) var(--easing-standard);
+  }
+}
+
+@media (hover: hover) {
+  .footer__nav-link:hover {
+    color: var(--primary);
+  }
+}
+
+@media (min-width: 37.5em) {
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 60em) {
+  .footer__main {
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  .footer__links {
+    justify-content: flex-end;
+  }
+}

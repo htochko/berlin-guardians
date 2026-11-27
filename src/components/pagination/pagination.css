@@ -1,0 +1,97 @@
+.pagination {
+  position: sticky;
+  bottom: var(--size-2);
+  z-index: 1;
+  width: fit-content;
+  margin-inline: auto;
+  padding: var(--size-1);
+  border: var(--border-width) solid var(--outline-variant);
+  border-radius: var(--corner-full);
+  background-color: var(--surface);
+  box-shadow: var(--level-2);
+  backdrop-filter: blur(var(--size-05));
+}
+
+.pagination__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-1);
+}
+
+.pagination__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--target-size);
+  min-height: var(--target-size);
+  border: var(--border-width) solid var(--outline);
+  border-radius: var(--corner-full);
+  /* background-color: var(--secondary); */
+  color: var(--on-bg);
+  font-size: var(--label-large);
+  font-weight: var(--weight-medium);
+  line-height: var(--line-height-tight);
+}
+
+.pagination__link--step {
+  border-color: var(--primary);
+  background-color: transparent;
+  color: var(--primary);
+}
+
+.pagination__link--current {
+  border-color: var(--primary);
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+
+.pagination__link--disabled {
+  border-color: var(--outline-variant);
+  color: var(--on-bg-low);
+  opacity: var(--opacity-disabled);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pagination__link {
+    transition:
+      background-color var(--duration-fast) var(--easing-standard),
+      border-color var(--duration-fast) var(--easing-standard),
+      color var(--duration-fast) var(--easing-standard),
+      box-shadow var(--duration-fast) var(--easing-standard);
+  }
+}
+
+@media (hover: hover) {
+  .pagination__link:not(.pagination__link--current, .pagination__link--disabled):hover {
+    border-color: var(--primary);
+    background-color: var(--primary);
+    color: var(--on-primary);
+    box-shadow: var(--level-2);
+  }
+
+  .pagination__link--step:not(.pagination__link--disabled):hover {
+    border-color: var(--primary);
+    background-color: var(--primary);
+    color: var(--on-primary);
+  }
+}
+
+@media (forced-colors: active) {
+  .pagination__link--current {
+    border-color: Highlight;
+    text-decoration: underline;
+  }
+}
+
+@media (min-width: 37.5em) {
+  .pagination {
+    position: static;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+}

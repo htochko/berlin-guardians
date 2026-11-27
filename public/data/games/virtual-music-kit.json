@@ -1,0 +1,26 @@
+{
+  "data": {
+    "slug": "virtual-music-kit",
+    "name": "Virtual Music Kit",
+    "category": "arcade",
+    "priceCents": 0,
+    "status": "available",
+    "heroImage": {
+      "alt": "A virtual kalimba instrument with a row of tuned metal keys, musical notation controls and keyboard mappings displayed on a dark background",
+      "width": 1920,
+      "height": 1080,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcset": "/assets/images/games/virtual-music-kit-hero.webp 1x, /assets/images/games/virtual-music-kit-hero@2x.webp 2x"
+        }
+      ],
+      "fallback": "/assets/images/games/virtual-music-kit-hero.jpg"
+    },
+    "fullDescription": "Virtual Music Kit — a small interactive instrument you play in the browser. Click the keys or press the assigned letters on your keyboard to make sounds, and rebind any key you don't like. You can also type a sequence of keys and hit play to listen to your melody one note at a time.",
+    "specs": {
+      "players": "Solo",
+      "duration": "5-20 min"
+    }
+  }
+}

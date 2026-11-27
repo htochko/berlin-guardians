@@ -1,0 +1,26 @@
+{
+  "data": {
+    "slug": "lantern-moth",
+    "name": "Lantern Moth",
+    "category": "adventure",
+    "priceCents": 399,
+    "status": "available",
+    "heroImage": {
+      "alt": "A glowing lantern moth explores a dark enchanted forest filled with fireflies, mushrooms, ponds and wooden bridges",
+      "width": 1920,
+      "height": 1080,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcset": "/assets/images/games/lantern-moth-hero.webp 1x, /assets/images/games/lantern-moth-hero@2x.webp 2x"
+        }
+      ],
+      "fallback": "/assets/images/games/lantern-moth-hero.jpg"
+    },
+    "fullDescription": "Lantern Moth — a small hand-drawn adventure about a moth and her lantern. The forest is dark and your light is the only thing that works. Explore hollow logs and quiet ponds, wake the sleeping fireflies and slowly light the path back to the old oak. Short, gentle and a bit melancholic.",
+    "specs": {
+      "players": "Solo",
+      "duration": "60-90 min"
+    }
+  }
+}

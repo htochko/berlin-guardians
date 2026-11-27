@@ -1,0 +1,26 @@
+{
+  "data": {
+    "slug": "rss-css-selectors",
+    "name": "RSS CSS Selectors",
+    "category": "puzzle",
+    "priceCents": 0,
+    "status": "available",
+    "heroImage": {
+      "alt": "A CSS selector learning game showing animal elements on plates, HTML markup and a code editor for writing selectors to match specific elements",
+      "width": 1920,
+      "height": 1080,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcset": "/assets/images/games/rss-css-selectors-hero.webp 1x, /assets/images/games/rss-css-selectors-hero@2x.webp 2x"
+        }
+      ],
+      "fallback": "/assets/images/games/rss-css-selectors-hero.jpg"
+    },
+    "fullDescription": "RSS CSS Selectors — a trainer for learning CSS selectors, inspired by CSS Diner. Every level shows a bit of markup with some elements pulsing, and you write a selector that matches exactly those. Hover the code or the picture to see what matches what, hit Help if you're stuck, and your progress is saved between visits.",
+    "specs": {
+      "players": "Solo",
+      "duration": "20-40 min"
+    }
+  }
+}

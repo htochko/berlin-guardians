@@ -1,0 +1,26 @@
+{
+  "data": {
+    "slug": "sleepy-fishing-pond",
+    "name": "Sleepy Fishing Pond",
+    "category": "casual",
+    "priceCents": 0,
+    "status": "available",
+    "heroImage": {
+      "alt": "A peaceful fishing game with a child fishing from a wooden dock at sunrise, fish swimming in a lily-covered pond, a fishing journal and a cat resting nearby",
+      "width": 1920,
+      "height": 1080,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcset": "/assets/images/games/sleepy-fishing-pond-hero.webp 1x, /assets/images/games/sleepy-fishing-pond-hero@2x.webp 2x"
+        }
+      ],
+      "fallback": "/assets/images/games/sleepy-fishing-pond-hero.jpg"
+    },
+    "fullDescription": "Sleepy Fishing Pond — a casual game for when you just want to do nothing for a few minutes. Cast, wait, catch. Every fish has its own mood and favorite time of day, and the pond journal fills up as you learn them. Soft music, no fail state.",
+    "specs": {
+      "players": "Solo",
+      "duration": "5-20 min"
+    }
+  }
+}

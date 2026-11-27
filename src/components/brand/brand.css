@@ -1,0 +1,31 @@
+/* components/brand/brand.css */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--brand-gap, calc(var(--size-1) + var(--size-05)));
+  min-height: var(--target-size);
+  color: var(--on-bg);
+  font-size: var(--body-small);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.01em;
+  line-height: var(--line-height-tight);
+  white-space: nowrap;
+}
+
+.brand__logo {
+  flex: none;
+  width: var(--brand-logo-size, var(--size-6));
+  height: var(--brand-logo-size, var(--size-6));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .brand {
+    transition: color var(--duration-medium) var(--easing-standard);
+  }
+}
+
+@media (hover: hover) {
+  .brand:hover {
+    color: var(--primary);
+  }
+}

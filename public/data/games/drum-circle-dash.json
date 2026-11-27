@@ -1,0 +1,26 @@
+{
+  "data": {
+    "slug": "drum-circle-dash",
+    "name": "Drum Circle Dash",
+    "category": "music",
+    "priceCents": 199,
+    "status": "available",
+    "heroImage": {
+      "alt": "Rhythm game gameplay showing glowing drum pads in a nighttime drum circle, with score, combo and beat feedback",
+      "width": 1920,
+      "height": 1080,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcset": "/assets/images/games/drum-circle-dash-hero.webp 1x, /assets/images/games/drum-circle-dash-hero@2x.webp 2x"
+        }
+      ],
+      "fallback": "/assets/images/games/drum-circle-dash-hero.jpg"
+    },
+    "fullDescription": "Drum Circle Dash — a rhythm game about playing in a drum circle that keeps getting faster. Tap the pads in time with the beat, build combos and add new instruments to the circle. Songs get wilder after every round, so stay focused.",
+    "specs": {
+      "players": "Solo",
+      "duration": "10-30 min"
+    }
+  }
+}

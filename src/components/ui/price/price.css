@@ -1,0 +1,14 @@
+.price {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-1);
+  font-weight: var(--weight-bold);
+}
+
+.price .icon {
+  color: var(--primary);
+}
+
+.price--free {
+  color: var(--price-free);
+}

@@ -1,0 +1,143 @@
+/* ---------- dialog box: full screen on phones, centered from tablet ---------- */
+dialog.modal-dialog {
+  --dialog-gap: var(--size-2);
+
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: var(--size-3) var(--space-page-gutter);
+  overflow: hidden;
+  background-color: var(--surface);
+  color: var(--on-bg);
+  border: 0;
+  border-radius: 0;
+}
+
+dialog.modal-dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+dialog.modal-dialog:not([open]) {
+  display: none;
+}
+
+dialog.modal-dialog::backdrop {
+  background-color: var(--overlay);
+  backdrop-filter: blur(var(--size-05));
+}
+
+@media (min-width: 37.5em) {
+  dialog.modal-dialog {
+    width: min(100% - 2 * var(--dialog-gap), var(--dialog-width));
+    height: fit-content;
+    max-height: calc(100dvh - 2 * var(--dialog-gap));
+    margin: auto;
+    padding: var(--size-3);
+    border: var(--border-width) solid var(--outline-variant);
+    border-radius: var(--corner-large);
+    box-shadow: var(--level-3);
+  }
+}
+
+/* ---------- content: the only scrolling area ---------- */
+
+/* negative margin + padding - room for the focus ring */
+dialog.modal-dialog .modal-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: calc(var(--size-1) * -1);
+  padding: var(--size-1);
+  overflow: hidden auto;
+  overscroll-behavior: contain;
+}
+
+/* ---------- title ---------- */
+
+dialog.modal-dialog:not(.modal-dialog--product) > h2 {
+  padding-inline-end: calc(var(--target-size) + var(--size-1));
+}
+
+dialog.modal-dialog--product > h2 {
+  position: absolute;
+  width: 1px; /* reset: technical values */
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- close button ---------- */
+dialog.modal-dialog .close-btn {
+  position: absolute;
+  top: var(--size-1);
+  right: var(--size-1);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--target-size);
+  height: var(--target-size);
+  padding: 0;
+  border: var(--border-width) solid var(--outline);
+  border-radius: var(--corner-full);
+  background-color: var(--overlay);
+  color: var(--on-bg);
+  font-size: var(--headline-small);
+  line-height: var(--line-height-tight);
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  dialog.modal-dialog .close-btn {
+    transition:
+      background-color var(--duration-fast) var(--easing-standard),
+      color var(--duration-fast) var(--easing-standard),
+      border-color var(--duration-fast) var(--easing-standard);
+  }
+}
+
+@media (hover: hover) {
+  dialog.modal-dialog .close-btn:hover {
+    border-color: var(--primary);
+    background-color: var(--primary);
+    color: var(--on-primary);
+  }
+}
+
+/* ---------- variant: product ---------- */
+dialog.modal-dialog--product {
+  --dialog-width: var(--dialog-width-product);
+
+  padding: 0;
+}
+
+dialog.modal-dialog--product .modal-content {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/* "Loading…" and "Game not found" */
+dialog.modal-dialog--product > .modal-content > p[role='status'] {
+  padding: var(--size-6) var(--size-3);
+}
+
+/* ---------- variant: auth ---------- */
+dialog.modal-dialog--auth .modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+dialog.modal-dialog--auth .form {
+  flex: 1;
+}
+
+dialog.modal-dialog--auth .form__description {
+  margin-bottom: auto;
+}

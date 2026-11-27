@@ -1,0 +1,26 @@
+{
+  "data": {
+    "slug": "pocket-bakery",
+    "name": "Pocket Bakery",
+    "category": "simulation",
+    "priceCents": 0,
+    "status": "available",
+    "heroImage": {
+      "alt": "A cozy bakery simulation with customers waiting at the counter, pastries and cupcakes on display, and a baker preparing fresh bread beside a brick oven",
+      "width": 1920,
+      "height": 1080,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcset": "/assets/images/games/pocket-bakery-hero.webp 1x, /assets/images/games/pocket-bakery-hero@2x.webp 2x"
+        }
+      ],
+      "fallback": "/assets/images/games/pocket-bakery-hero.jpg"
+    },
+    "fullDescription": "Pocket Bakery — a simulation game about a one-room bakery. Mix the dough, wait for it to rise, bake and serve. Regulars have favorites and strange orders, and the shop grows with every happy customer. Unlock new recipes, new decorations and a bigger oven.",
+    "specs": {
+      "players": "Solo",
+      "duration": "30-90 min"
+    }
+  }
+}

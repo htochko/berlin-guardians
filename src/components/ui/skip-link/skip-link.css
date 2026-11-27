@@ -1,0 +1,16 @@
+.skip-link {
+  position: absolute;
+  z-index: 100;
+  top: var(--size-2);
+  left: var(--size-2);
+  padding: var(--btn-medium);
+  border-radius: var(--corner-medium);
+  background: var(--primary);
+  color: var(--on-primary);
+  font-weight: var(--weight-bold);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}

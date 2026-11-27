@@ -1,0 +1,309 @@
+/*
+  base.css: reset, page defaults, typography, layout, forms, accessibility.
+  Uses tokens; raw values are allowed only where marked "reset".
+*/
+
+/* ---------- reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+[hidden] {
+  display: none !important; /* reset: technical value */
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* ---------- page ---------- */
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--size-8) + var(--size-3)); /* room for the sticky header */
+}
+
+@media (min-width: 37.5em) {
+  html {
+    scrollbar-gutter: stable;
+  }
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+  color: var(--on-bg);
+  font-family: var(--inter);
+  font-size: var(--body-medium);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  flex: 1;
+}
+
+/* page scroll is locked while the mobile menu or a modal dialog is open */
+body.is-scroll-locked {
+  overflow: hidden;
+}
+
+body:has(dialog.modal-dialog[open]) {
+  overflow: hidden;
+}
+
+/* ---------- typography: mobile first, one step up from tablet ---------- */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--on-bg);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-height-tight);
+}
+
+h1 {
+  font-size: var(--display-medium);
+}
+
+h2 {
+  font-size: var(--headline-medium);
+}
+
+h3 {
+  font-size: var(--headline-small);
+}
+
+h4 {
+  font-size: var(--body-large);
+}
+
+@media (min-width: 37.5em) {
+  h1 {
+    font-size: var(--display-large);
+  }
+
+  h2 {
+    font-size: var(--headline-large);
+  }
+
+  h3 {
+    font-size: var(--headline-medium);
+  }
+
+  h4 {
+    font-size: var(--headline-small);
+  }
+}
+
+/* ---------- layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-page-gutter);
+}
+
+.section {
+  margin-block-start: var(--space-section);
+}
+
+.section__title {
+  margin-block-end: var(--space-section-heading);
+  padding-inline-start: var(--size-2);
+  border-inline-start: var(--size-05) solid var(--primary);
+  font-size: var(--headline-large);
+}
+
+/* ---------- forms ---------- */
+
+/* fields look right without any class */
+label {
+  font-size: var(--body-small);
+  font-weight: var(--weight-medium);
+}
+
+input:not(
+  [type='checkbox'],
+  [type='radio'],
+  [type='range'],
+  [type='file'],
+  [type='submit'],
+  [type='button']
+),
+select,
+textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: var(--target-size);
+  padding: var(--btn-small);
+  background-color: var(--secondary);
+  border: var(--border-width) solid var(--outline);
+  border-radius: var(--corner-small);
+}
+
+::placeholder {
+  color: var(--on-bg-low);
+  opacity: 1; /* reset: Firefox dims placeholders by default */
+}
+
+:is(input, select, textarea)[aria-invalid='true'] {
+  border-color: var(--error);
+}
+
+:is(input, select, textarea):disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+/* the ring is drawn inside the field: scroll containers would clip it */
+:is(input, select, textarea):focus-visible {
+  outline-offset: calc(var(--focus-ring-width) * -1);
+  border-color: var(--primary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2);
+}
+
+.form__description {
+  color: var(--on-bg-low);
+  font-size: var(--body-small);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-05);
+}
+
+.form__error {
+  min-height: calc(
+    var(--body-small) * var(--line-height-normal)
+  ); /* one line: the form does not jump */
+  color: var(--error);
+  font-size: var(--body-small);
+}
+
+.form__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--size-1);
+  margin-top: auto;
+}
+
+.form__actions .btn {
+  width: 100%;
+}
+
+@media (min-width: 37.5em) {
+  .form__actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--size-1);
+  }
+
+  .form__actions .btn {
+    width: auto;
+  }
+}
+
+/* a button that looks like a link */
+.link-button {
+  min-height: var(--target-size);
+  padding-inline: var(--size-1);
+  color: var(--on-bg-low);
+  font-size: var(--body-small);
+  font-weight: var(--weight-medium);
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: var(--size-05);
+}
+
+@media (hover: hover) {
+  .link-button:hover {
+    color: var(--primary-low);
+  }
+}
+
+/* ---------- accessibility ---------- */
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* main is focused only by the skip link */
+main:focus-visible {
+  outline: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; /* reset: technical values */
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important; /* reset: technical value */
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Windows high contrast mode: keep focus visible */
+@media (forced-colors: active) {
+  :focus-visible {
+    outline-color: Highlight;
+  }
+}

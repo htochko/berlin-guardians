@@ -1,0 +1,26 @@
+{
+  "data": {
+    "slug": "minesweeper",
+    "name": "Minesweeper",
+    "category": "puzzle",
+    "priceCents": 0,
+    "status": "available",
+    "heroImage": {
+      "alt": "A classic minesweeper game with a partially revealed grid, numbered cells and hidden mines to uncover",
+      "width": 1920,
+      "height": 1080,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcset": "/assets/images/games/minesweeper-hero.webp 1x, /assets/images/games/minesweeper-hero@2x.webp 2x"
+        }
+      ],
+      "fallback": "/assets/images/games/minesweeper-hero.jpg"
+    },
+    "fullDescription": "Minesweeper — the classic. Mines are hidden across a grid of cells that can be closed, opened or flagged. Open a cell and it shows how many mines are around it, or a blank and a whole area opens up. Flag the cells you think are mined, and don't open a real one, because that's a loss.",
+    "specs": {
+      "players": "Solo",
+      "duration": "5-15 min"
+    }
+  }
+}

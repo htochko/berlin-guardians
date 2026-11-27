@@ -1,0 +1,46 @@
+.menu-button {
+  --bar: calc(var(--border-width) * 2);
+  --bar-shift: calc(var(--size-05) + var(--bar));
+}
+
+.menu-button__bars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-05);
+  width: var(--size-3);
+}
+
+.menu-button__bar {
+  display: block;
+  height: var(--bar);
+  border-radius: var(--corner-full);
+  background: currentColor;
+}
+
+/* cross */
+.menu-button[aria-expanded='true'] .menu-button__bar:nth-child(1) {
+  transform: translateY(var(--bar-shift)) rotate(45deg);
+}
+
+.menu-button[aria-expanded='true'] .menu-button__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button[aria-expanded='true'] .menu-button__bar:nth-child(3) {
+  transform: translateY(calc(var(--bar-shift) * -1)) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .menu-button__bar {
+    transition:
+      transform var(--duration-fast) var(--easing-standard),
+      opacity var(--duration-fast) var(--easing-standard);
+  }
+}
+
+@media (forced-colors: active) {
+  .menu-button__bar {
+    forced-color-adjust: none;
+    background: ButtonText;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "data": {
+    "slug": "paper-boats",
+    "name": "Paper Boats",
+    "category": "casual",
+    "priceCents": 0,
+    "status": "available",
+    "heroImage": {
+      "alt": "A paper boat floating along a winding canal through a cozy town, surrounded by ducks, autumn leaves, collectible stars and stickers",
+      "width": 1920,
+      "height": 1080,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcset": "/assets/images/games/paper-boats-hero.webp 1x, /assets/images/games/paper-boats-hero@2x.webp 2x"
+        }
+      ],
+      "fallback": "/assets/images/games/paper-boats-hero.jpg"
+    },
+    "fullDescription": "Paper Boats — a casual game about a boat folded from a page of a notebook. After a rainstorm the street turns into a river, and your boat floats from one end to the other. Nudge the water to steer around leaves and ducks. Collect stickers on the way.",
+    "specs": {
+      "players": "Solo",
+      "duration": "10-25 min"
+    }
+  }
+}

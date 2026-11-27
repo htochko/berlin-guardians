@@ -1,0 +1,60 @@
+{
+  "name": "berlin-guardians",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Game set with e-shop options",
+  "keywords": [
+    "games",
+    "assets",
+    "firebase",
+    "typescript"
+  ],
+  "homepage": "https://github.com/htochko/berlin-guardians#readme",
+  "bugs": {
+    "url": "https://github.com/htochko/berlin-guardians/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htochko/berlin-guardians.git"
+  },
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "build:dev": "tsc --noEmit && vite build --mode development",
+    "preview": "vite preview",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.15.0",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.1",
+    "prettier": "^3.10.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.73.0",
+    "vite": "^6.2.7",
+    "vitest": "^5.1.1"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true,
+    "esbuild@0.25.12": true
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,json,md,html}": "prettier --write"
+  },
+  "dependencies": {
+    "firebase": "^13.4.0"
+  }
+}

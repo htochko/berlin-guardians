@@ -1,0 +1,26 @@
+{
+  "data": {
+    "slug": "little-orchard",
+    "name": "Little Orchard",
+    "category": "farm",
+    "priceCents": 0,
+    "status": "available",
+    "heroImage": {
+      "alt": "A cozy apple orchard game with fruit-laden trees, a ladder, harvest baskets, jam jars and orchard management tools",
+      "width": 1920,
+      "height": 1080,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcset": "/assets/images/games/little-orchard-hero.webp 1x, /assets/images/games/little-orchard-hero@2x.webp 2x"
+        }
+      ],
+      "fallback": "/assets/images/games/little-orchard-hero.jpg"
+    },
+    "fullDescription": "Little Orchard — a calm farming game about trees instead of fields. Start with two apple trees and a rusty ladder. Prune them in winter, graft new varieties in spring and pick the fruit when it's ready. Jam, cider and fruit baskets are your main income, and slowly the orchard fills up.",
+    "specs": {
+      "players": "Solo",
+      "duration": "30-60 min"
+    }
+  }
+}
