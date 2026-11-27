@@ -1,0 +1,182 @@
+.about-section {
+  width: 100%;
+  padding-inline: var(--space-page-gutter);
+}
+
+.about-section__container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-section-heading);
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-card);
+  background-color: var(--surface);
+  color: var(--on-bg);
+  border: var(--border-width) solid var(--outline-variant);
+  border-radius: var(--corner-large);
+  box-shadow: var(--level-1);
+}
+
+@media (min-width: 60em) {
+  .about-section__container {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+    align-items: start;
+    gap: var(--size-4);
+    padding: var(--size-4);
+  }
+}
+
+.about-section__intro {
+  width: 100%;
+}
+
+.about-section__title {
+  margin: 0 0 var(--space-section-heading);
+  font-family: var(--inter);
+  font-size: var(--headline-large);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--on-bg);
+}
+
+.about-section__description {
+  margin: 0;
+  font-family: var(--inter);
+  font-size: var(--body-small);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--on-bg-low);
+}
+
+.about-section__team {
+  width: 100%;
+  padding-top: var(--space-section-heading);
+  border-top: var(--border-width) solid var(--outline-variant);
+}
+
+@media (min-width: 60em) {
+  .about-section__team {
+    padding-top: 0;
+    padding-left: var(--size-4);
+    border-top: none;
+    border-left: var(--border-width) solid var(--outline-variant);
+  }
+}
+
+.about-section__team-title {
+  margin: 0 0 var(--space-section-heading);
+  font-family: var(--inter);
+  font-size: var(--headline-small);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--on-bg);
+}
+
+.contributors-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-grid);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 37.5em) {
+  .contributors-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.contributor-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--size-2);
+  min-width: 0;
+}
+
+.contributor-card__avatar {
+  flex-shrink: 0;
+  width: var(--size-6);
+  height: var(--size-6);
+  border-radius: var(--corner-full);
+  object-fit: cover;
+  background-color: var(--surface-low);
+  border: var(--border-width) solid var(--outline-variant);
+}
+
+@media (min-width: 60em) {
+  .contributor-card__avatar {
+    width: var(--size-8);
+    height: var(--size-8);
+  }
+}
+
+.contributor-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-05);
+  min-width: 0;
+}
+
+.contributor-card__name {
+  margin: 0;
+  font-family: var(--inter);
+  font-size: var(--body-medium);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--on-bg);
+}
+
+.contributor-card__bio {
+  margin: 0;
+  font-family: var(--inter);
+  font-size: var(--label-medium);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--on-bg-low);
+}
+
+.contributor-card__socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--size-1);
+  margin: var(--size-05) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contributor-card__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--target-size);
+  min-height: var(--target-size);
+  padding: var(--btn-icon);
+  background-color: var(--surface-low);
+  color: var(--on-bg);
+  border: var(--border-width) solid var(--outline-variant);
+  border-radius: var(--corner-small);
+  text-decoration: none;
+  transition:
+    background-color var(--duration-fast) var(--easing-standard),
+    border-color var(--duration-fast) var(--easing-standard);
+}
+
+.contributor-card__social-link:hover {
+  background-color: var(--secondary);
+  border-color: var(--outline);
+}
+
+.contributor-card__social-link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.contributor-card__social-icon {
+  display: block;
+  width: var(--size-2);
+  height: var(--size-2);
+  object-fit: contain;
+}

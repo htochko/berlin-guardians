@@ -1,3 +1,4 @@
+// src/api/products-adapter.ts
 import { FIREBASE_ENDPOINT_QUERY } from '../services/firebase';
 import { type productsRecord } from '../types/products';
 import {
