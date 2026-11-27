@@ -13,11 +13,7 @@ main:has(> .catalog-page) {
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: var(--space-section-heading);
-}
-
-.catalog-page__results > .card-grid {
-  margin-block: auto;
+  gap: var(--space-section);
 }
 
 .catalog-page__title {
@@ -30,4 +26,8 @@ main:has(> .catalog-page) {
 
 .section.catalog-page {
   margin-block-start: var(--space-section-heading);
+}
+
+.catalog-page__results > .pagination {
+  margin-block-start: auto;
 }

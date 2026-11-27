@@ -14,22 +14,47 @@ import { paginate, parsePage } from '../../utils/pagination';
 import { createPagination } from '../../components/pagination/pagination';
 import { fetchAllProducts } from '../../api/products-api';
 import './catalog-page.css';
+import { createCatalogQuery, filterByCategory, parseCategory } from '../../utils/catalog-query';
+import {
+  createGenreFilter,
+  type GenreFilterItem,
+} from '../../components/genre-filter/genre-filter';
 
 const PAGE_SIZE = 8;
 const EAGER_IMAGES = 4; // first items download immediately
+const ALL_GAMES_LABEL = 'All games';
+const UNKNOWN_CATEGORY = 'default';
 
-function getPageQuery(page: number): URLSearchParams {
-  const query: URLSearchParams = new URLSearchParams();
-
-  if (page > 1) {
-    query.set('page', String(page)); // e.g. page=2
-  }
-
-  return query;
+function getCatalogHref(page: number, category: string | undefined): string {
+  return toBrowserUrl(Route.Catalog, createCatalogQuery(page, category), import.meta.env.BASE_URL);
 }
 
-function getPageHref(page: number): string {
-  return toBrowserUrl(Route.Catalog, getPageQuery(page), import.meta.env.BASE_URL);
+function capitalize(text: string): string {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function getFilterItems(
+  products: readonly Product[],
+  currentCategory: string | undefined,
+): GenreFilterItem[] {
+  const categories: string[] = [...new Set(products.map((product: Product) => product.category))]
+    .filter((category: string) => category !== UNKNOWN_CATEGORY)
+    .sort();
+
+  const genreItems: GenreFilterItem[] = categories.map((category: string): GenreFilterItem => ({
+    label: capitalize(category),
+    href: getCatalogHref(1, category),
+    isCurrent: category === currentCategory,
+  }));
+
+  return [
+    {
+      label: ALL_GAMES_LABEL,
+      href: getCatalogHref(1, undefined),
+      isCurrent: currentCategory === undefined,
+    },
+    ...genreItems,
+  ];
 }
 
 function toGridItem(product: Product, index: number, pageQuery: URLSearchParams): CardGridItem {
@@ -43,10 +68,19 @@ function toGridItem(product: Product, index: number, pageQuery: URLSearchParams)
   };
 }
 
+function createMessage(text: string, role: 'status' | 'alert'): HTMLElement {
+  return createElement('p', {
+    className: 'catalog-page__status',
+    text,
+    attributes: { role },
+  });
+}
+
 export function renderCatalogPage(location: AppLocation): PageView {
   let isDestroyed = false;
   let products: readonly Product[] | undefined;
   let currentPage: number = parsePage(location.query);
+  let currentCategory: string | undefined = parseCategory(location.query);
 
   const heading: HTMLElement = createElement('h1', {
     className: 'catalog-page__title',
@@ -56,24 +90,8 @@ export function renderCatalogPage(location: AppLocation): PageView {
 
   const results: HTMLElement = createElement('div', {
     className: 'catalog-page__results',
-    children: [
-      createElement('p', {
-        className: 'catalog-page__status',
-        text: 'Loading games...',
-        attributes: { role: 'status' },
-      }),
-    ],
+    children: [createMessage('Loading games...', 'status')],
   });
-
-  const showMessage = (text: string, role: 'status' | 'alert'): void => {
-    results.replaceChildren(
-      createElement('p', {
-        className: 'catalog-page__status',
-        text,
-        attributes: { role },
-      }),
-    );
-  };
 
   const render = (): void => {
     if (products === undefined) {
@@ -81,30 +99,38 @@ export function renderCatalogPage(location: AppLocation): PageView {
     }
 
     if (products.length === 0) {
-      showMessage('No games yet. Check back soon!', 'status');
+      results.replaceChildren(createMessage('No games yet. Check back soon!', 'status'));
       return;
     }
 
-    const result = paginate(products, currentPage, PAGE_SIZE);
-    currentPage = result.page; //?page=999 - last page
-    const pageQuery: URLSearchParams = getPageQuery(result.page);
+    const genreFilter: HTMLElement = createGenreFilter(getFilterItems(products, currentCategory));
+    const filtered: readonly Product[] = filterByCategory(products, currentCategory);
 
-    results.replaceChildren(
-      createCardGrid(
-        result.items.map((product: Product, index: number): CardGridItem =>
-          toGridItem(product, index, pageQuery),
-        ),
-      ),
-      ...(result.totalPages > 1
+    if (filtered.length === 0) {
+      results.replaceChildren(genreFilter, createMessage('No games in this genre yet.', 'status'));
+      return;
+    }
+
+    const { items, page, totalPages } = paginate(filtered, currentPage, PAGE_SIZE);
+    currentPage = page; //?page=999 - last page
+    const pageQuery: URLSearchParams = createCatalogQuery(page, currentCategory);
+
+    const grid: HTMLElement = createCardGrid(
+      items.map((product: Product, index: number) => toGridItem(product, index, pageQuery)),
+    );
+
+    const pagination: HTMLElement[] =
+      totalPages > 1
         ? [
             createPagination({
-              page: result.page,
-              totalPages: result.totalPages,
-              getHref: getPageHref,
+              page,
+              totalPages,
+              getHref: (target: number): string => getCatalogHref(target, currentCategory),
             }),
           ]
-        : []),
-    );
+        : [];
+
+    results.replaceChildren(genreFilter, grid, ...pagination);
   };
 
   fetchAllProducts()
@@ -120,9 +146,13 @@ export function renderCatalogPage(location: AppLocation): PageView {
       if (isDestroyed) {
         return;
       }
+
       console.error(error);
-      showMessage('Failed to load the games. Please try again later', 'alert');
+      results.replaceChildren(
+        createMessage('Failed to load the games. Please try again later', 'alert'),
+      );
     });
+
   return {
     elements: [
       createElement('section', {
@@ -131,16 +161,21 @@ export function renderCatalogPage(location: AppLocation): PageView {
         children: [heading, results],
       }),
     ],
+
     update: (next: AppLocation): void => {
       const nextPage: number = parsePage(next.query);
-      if (nextPage === currentPage) {
+      const nextCategory: string | undefined = parseCategory(next.query);
+
+      if (nextPage === currentPage && nextCategory === currentCategory) {
         return;
       }
 
       currentPage = nextPage;
+      currentCategory = nextCategory;
       render();
       heading.scrollIntoView({ block: 'start' });
     },
+
     destroy: (): void => {
       isDestroyed = true;
     },
