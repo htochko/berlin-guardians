@@ -7,13 +7,20 @@ import {
   type RunQueryDocument,
 } from './firestore-rest';
 
+const IMAGE_SIZE = {
+  CARD_WIDTH: 460,
+  CARD_HEIGHT: 215,
+  HERO_WIDTH: 1920,
+  HERO_HEIGHT: 1080,
+};
+
 function createCardImage(slug: string, alt: string): ProductImage {
   const path = `/assets/images/games/${slug}`;
 
   return {
     alt,
-    width: 460,
-    height: 215,
+    width: IMAGE_SIZE.CARD_WIDTH,
+    height: IMAGE_SIZE.CARD_HEIGHT,
     sources: [{ type: 'image/webp', srcset: `${path}-card.webp 1x, ${path}-card@2x.webp 2x` }],
     fallback: `${path}-card.jpg`,
   };
