@@ -1,0 +1,33 @@
+main:has(> .catalog-page) {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog-page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.catalog-page__results {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-section-heading);
+}
+
+.catalog-page__results > .card-grid {
+  margin-block: auto;
+}
+
+.catalog-page__title {
+  margin-block-end: var(--space-section-heading);
+}
+
+.catalog-page__status {
+  color: var(--on-bg-low);
+}
+
+.section.catalog-page {
+  margin-block-start: var(--space-section-heading);
+}

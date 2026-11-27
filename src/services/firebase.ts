@@ -7,7 +7,7 @@ export const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  databaseName: import.meta.env.VITE_FIREBASE_DATABASE_NAME || 'default',
+  databaseName: import.meta.env.VITE_FIREBASE_DATABASE_NAME || '(default)',
 };
 
 export const FIREBASE_ENDPOINT = `https://firestore.googleapis.com/v1/projects/${firebaseConfig.projectId}/databases/${firebaseConfig.databaseName}/documents`;
