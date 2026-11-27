@@ -1,3 +1,4 @@
+// src/utils.dom.ts
 type ElementChild = Node | string;
 
 type EventHandlers = {

@@ -42,3 +42,17 @@ export function createIcon(name: IconName): SVGSVGElement {
 
   return svg;
 }
+
+// 48x48 social icons
+export const SOCIAL_ICON_SRCS = {
+  linkedin:
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Crect x='2' y='2' width='20' height='20' rx='4' stroke='%23F2E4DA' stroke-width='2'/%3E%3Cpath d='M8 10V16M8 7.5V8M12 16V10M12 12.2C12.5 10.8 14 10.5 15 11.2C15.7 11.7 16 12.6 16 13.8V16' stroke='%23F2E4DA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
+  github:
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2.5C6.75 2.5 2.5 6.75 2.5 12C2.5 16.2 5.22 19.76 9 21.02C9.48 21.11 9.65 20.81 9.65 20.56V18.88C7.01 19.45 6.45 17.61 6.45 17.61C6.02 16.51 5.4 16.22 5.4 16.22C4.54 15.63 5.47 15.64 5.47 15.64C6.42 15.71 6.92 16.61 6.92 16.61C7.76 18.05 9.13 17.63 9.67 17.39C9.76 16.78 10 16.36 10.26 16.12C8.15 15.88 5.93 15.07 5.93 11.42C5.93 10.38 6.3 9.53 6.91 8.86C6.81 8.62 6.49 7.64 7 6.32C7 6.32 7.8 6.06 9.63 7.3C10.39 7.09 11.2 6.98 12 6.98C12.8 6.98 13.61 7.09 14.37 7.3C16.2 6.06 17 6.32 17 6.32C17.51 7.64 17.19 8.62 17.09 8.86C17.7 9.53 18.07 10.38 18.07 11.42C18.07 15.08 15.84 15.88 13.73 16.12C14.07 16.41 14.37 16.99 14.37 17.87V20.56C14.37 20.81 14.54 21.12 15.03 21.02C18.78 19.76 21.5 16.2 21.5 12C21.5 6.75 17.25 2.5 12 2.5Z' stroke='%23F2E4DA' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
+  discord:
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Crect x='2.5' y='5' width='19' height='13' rx='5' stroke='%23F2E4DA' stroke-width='1.85'/%3E%3Cpath d='M8.5 17.5L7 20.5M15.5 17.5L17 20.5' stroke='%23F2E4DA' stroke-width='1.85' stroke-linecap='round'/%3E%3Ccircle cx='9.5' cy='11.5' r='1.35' fill='%23F2E4DA'/%3E%3Ccircle cx='14.5' cy='11.5' r='1.35' fill='%23F2E4DA'/%3E%3C/svg%3E",
+} as const;
+
+// 92x92 blank user icon
+export const FALLBACK_AVATAR_SRC =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='92' height='92' viewBox='0 0 92 92' fill='none'%3E%3Ccircle cx='46' cy='46' r='45.5' fill='%2332343C' stroke='%23353842'/%3E%3Ccircle cx='46' cy='36' r='14' fill='%238A8D98'/%3E%3Cpath d='M22 76C22 63.85 32.745 54 46 54C59.255 54 70 63.85 70 76' fill='%238A8D98'/%3E%3C/svg%3E";
